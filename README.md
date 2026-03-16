@@ -45,6 +45,13 @@ Attempted to replace midfield build-up rules with a RandomForest classifier trai
     └── 05-imitation-learning-hybrid.ipynb      # ML experiment — RandomForest imitation learning
 ```
 
+
+## Kaggle Notebooks
+
+Key notebooks published on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
+
+- [Marauding wingers - Score 1041.1](https://www.kaggle.com/code/illidan7/marauding-wingers-score-1041-1) (33 upvotes)
+- [Marauding wingers](https://www.kaggle.com/code/illidan7/marauding-wingers)
 ## Tech Stack
 
 - **Agent Framework**: Google Research Football Environment (GRF)
