@@ -46,12 +46,13 @@ Attempted to replace midfield build-up rules with a RandomForest classifier trai
 ```
 
 
+
 ## Kaggle Notebooks
 
-Key notebooks published on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
+Published notebooks on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
 
 - [Marauding wingers - Score 1041.1](https://www.kaggle.com/code/illidan7/marauding-wingers-score-1041-1) (33 upvotes)
-- [Marauding wingers](https://www.kaggle.com/code/illidan7/marauding-wingers)
+
 ## Tech Stack
 
 - **Agent Framework**: Google Research Football Environment (GRF)
