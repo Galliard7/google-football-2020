@@ -1,5 +1,7 @@
 # Google Research Football — Kaggle Competition
 
+![Competition Header](assets/header.png)
+
 ## Overview
 
 The [Google Research Football with Manchester City F.C.](https://www.kaggle.com/competitions/google-football) competition (2020) challenged participants to build AI agents that play 11v11 simulated football. Agents submit a Python function receiving game observations (player positions, ball state, game mode) and returning actions. Agents compete head-to-head on Kaggle's evaluation servers with Elo-style rating.
@@ -33,6 +35,32 @@ The final agent manages sprint vs. dribble mode based on field position and oppo
 ### 6. Imitation Learning Experiment
 
 Attempted to replace midfield build-up rules with a RandomForest classifier trained on community replay data (features: distance and heading to all 22 players). The hybrid agent kept rules for defense and set pieces while using ML for offensive movement decisions.
+
+## Results
+
+| Agent | Elo Rating | Notes |
+|---|---|---|
+| Chase-ball baseline | — | Competition starter |
+| Marauding Wingers v1 | — | Zone-based rule engine |
+| **Marauding Wingers (published)** | **1041** | 33 upvotes on Kaggle |
+| Injury Time (final) | — | Most advanced rule-based agent |
+| Imitation Learning Hybrid | — | RandomForest + rules experiment |
+
+## Architecture
+
+```mermaid
+graph LR
+    A["Game Observations<br>(positions, ball, game mode)"] --> B["Zone Classification<br>defensive / wing / crossing / shooting"]
+    B --> C{"Set Piece?"}
+    C -->|Yes| D["Set Piece Handlers<br>corners, free kicks, penalties"]
+    C -->|No| E["opp_prox Check<br>opponent density"]
+    E --> F{"Open Space?"}
+    F -->|Yes| G["Sprint Mode"]
+    F -->|No| H["Dribble / Pass / Shoot"]
+    D --> I["Action Output"]
+    G --> I
+    H --> I
+```
 
 ## Repository Structure
 
